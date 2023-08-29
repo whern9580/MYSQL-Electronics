@@ -132,7 +132,6 @@ Calculate SalesPrice column = price - discount
 select cust_id, first_name, product_name, cost, FORMAT(cost * 1.30, 2) AS MarkupPrice, quantity_purchased as QTY, quantity_purchased * cost*1.3 AS Subtotal,
     (cost * 1.30) * .1 AS '10% Discount', cost * 1.30- cost * 1.30 * .1 as SalesPrice
 FROM customers C JOIN products P on C.product_id = P.product_id
-#WHERE first_name = "Junior Tech" 
 WHERE first_name = "Junior Tech" AND quantity_purchased * cost >= 1000
 
 Who ordered computer equipment?
